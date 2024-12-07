@@ -39,17 +39,48 @@ Figure 02  Encoder 8 * 3
 /* write all the steps invloved */
 
 **PROGRAM**
+```
+module encoder_8to3 (
+    input [7:0] D,    
+    output reg [2:0] A 
+);
 
-/* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
+    always @ (D) begin
+        case (D)
+            8'b10000000: A = 3'b111; 
+            8'b01000000: A = 3'b110; 
+            8'b00100000: A = 3'b101; 
+            8'b00010000: A = 3'b100; 
+            8'b00001000: A = 3'b011;
+            8'b00000100: A = 3'b010; 
+            8'b00000010: A = 3'b001; 
+            8'b00000001: A = 3'b000; 
+            default: A = 3'bxxx;     
+        endcase
+    end
 
-Developed by: RegisterNumber:
+endmodule
+
+
+
+```
+
+Developed by:Rohith V RegisterNumber:24900447
 */
 
 **RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
 
-**TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
+![Screenshot 2024-12-07 155147](https://github.com/user-attachments/assets/b549de93-ffcd-43f9-867e-98d4e676b1a9)
 
-**RESULTS**
+
+**TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
+![Screenshot (60)](https://github.com/user-attachments/assets/009c2c55-d557-4bee-8c40-47beee49e0fe)
+
+Result:
+The implementation of  Encoder 8 To 3 in Dataflow Modelling using verilog and validating their functionality using their functional tables
+
+
+
 
 
 
